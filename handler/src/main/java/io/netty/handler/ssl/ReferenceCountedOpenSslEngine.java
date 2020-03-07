@@ -2416,4 +2416,18 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
             }
         }
     }
+
+    /**
+     * Configures supported named groups using SSL_set1_groups_list.
+     */
+    public final void setGroupsList(String groups) {
+        SSL.setGroupsList(ssl, groups);
+    }
+
+    /**
+     * Configures supported signature algorithtms using SSL_set1_sigalgs_list.
+     */
+    public final void setSigAlgsList(String sigalgs) {
+        SSL.setSigAlgsList(ssl, sigalgs);
+    }
 }
